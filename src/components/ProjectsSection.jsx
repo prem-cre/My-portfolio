@@ -11,6 +11,22 @@ export const ProjectsSection = () => {
             image: "/winkchat.png"
         },
         {
+            title: "Compliance-Aware LLM Writing Verification Engine",
+            description: "A multi-stage retrieval and compliance pipeline that reduced hallucinated statements and improved writing quality with own user defined rules through reference validation, and hybrid RAG scoring.",
+
+techStack: [
+  "Python",
+  "Gemini AI",
+  "LangGraph",
+  "Streamlit",
+  "Google File Search API",
+  "Vector Database",
+  
+],            githubLink: "https://github.com/prem-cre/compilance",
+            demoLink: "https://prem-cre-compilance-app-f39dot.streamlit.app/",
+            image: "/touristcompass.png"
+        },
+        {
             title: "CoderBuddy(Lovable-clone-Minverse)",
             description: "CoderBuddy leverages Google Gemini AI and LangGraph's multi-agent architecture to transform text prompts into complete, working applications. Built with FastAPI and Next.js, it orchestrates specialized AI agents to plan, architect, and implement full-stack projects autonomously.",
             techStack: [
