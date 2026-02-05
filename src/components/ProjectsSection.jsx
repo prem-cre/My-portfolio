@@ -22,7 +22,8 @@ techStack: [
   "Google File Search API",
   "Vector Database",
   
-],            githubLink: "https://github.com/prem-cre/compilance",
+],            githubLink: "https://github.com/prem-cre/compilance",   
+
             demoLink: "https://prem-cre-compilance-app-f39dot.streamlit.app/",
             image: "/touristcompass.png"
         },
