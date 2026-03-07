@@ -1,64 +1,15 @@
-import { Github, ExternalLink } from "lucide-react";
+import { Github, ExternalLink, ArrowRight } from "lucide-react";
+import { featuredProjects } from "../data/projects";
 
 export const ProjectsSection = () => {
-    const projects = [
-        {
-            title: "Vibe - A MultiAgent No-code Website Generator",
-            description: "An Advanced AI-powered SaaS platform for creating websites using Next.js,tRPC and Inngest for Agent Orchestration. It enables intelligent code generation, background task orchestration of multi-agents, and secure authentication. Featuring a premium, responsive glassmorphic user interface.",
-            techStack: ["Next.js", "TypeScript", "tRPC", "Prisma", "PostgreSQL", "Inngest", "Clerk", "Gemini AI", "Tailwind CSS", "E2B Sandbox"],
-            githubLink: "https://github.com/prem-cre/Lovable-Advance-SaaS-project",
-            demoLink: "https://lovable-advance-saa-s-project.vercel.app/home",
-            image: "/winkchat.png"
-        },
-        {
-            title: "Compliance-Aware LLM Writing Verification Engine",
-            description: "A multi-stage retrieval and compliance pipeline that reduced hallucinated statements and improved writing quality with own user defined rules through reference validation, and hybrid RAG scoring.",
-
-techStack: [
-  "Python",
-  "Gemini AI",
-  "LangGraph",
-  "Streamlit",
-  "Google File Search API",
-  "Vector Database",
-  
-],            githubLink: "https://github.com/prem-cre/compilance",   
-
-            demoLink: "https://prem-cre-compilance-app-f39dot.streamlit.app/",
-            image: "/touristcompass.png"
-        },
-        {
-            title: "CoderBuddy(Lovable-clone-Minverse)",
-            description: "CoderBuddy leverages Google Gemini AI and LangGraph's multi-agent architecture to transform text prompts into complete, working applications. Built with FastAPI and Next.js, it orchestrates specialized AI agents to plan, architect, and implement full-stack projects autonomously.",
-            techStack: [
-  "Next.js 16",
-  "React 19",
-  "TypeScript",
-  "Tailwind CSS",
-
-  "FastAPI",
-
-  "LangChain",
-  "LangGraph",
-  "Google Gemini AI",
-
-],
-            githubLink: "https://github.com/prem-cre/lovable-clone",
-            demoLink: "https://lovable-clone-lyart.vercel.app/",
-            image: "/safestreets.png"
-        },
-
-        
-    ];
-
     return (
         <section id="projects" className="py-24 px-4 relative">
             <div className="container mx-auto max-w-5xl">
                 <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-                    My Projects
+                    Featured Projects
                 </h2>
                 <div className="flex flex-col gap-10">
-                    {projects.map((project, index) => (
+                    {featuredProjects.map((project, index) => (
                         <div
                             key={index}
                             className={`bg-card rounded-xl border border-border shadow-md hover:shadow-xl transition-shadow duration-300 group flex flex-col md:flex-row ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''} h-full glow-card-hover`}
@@ -76,9 +27,21 @@ techStack: [
                             </div>
                             {/* Info Side */}
                             <div className="md:w-1/2 flex flex-col justify-center p-6 space-y-4 text-left">
-                                <h3 className="text-2xl font-bold text-primary">
-                                    {project.title}
-                                </h3>
+                                <div className="flex items-center gap-3 flex-wrap">
+                                    <h3 className="text-2xl font-bold text-primary">
+                                        {project.title}
+                                    </h3>
+                                    {project.difficulty && (
+                                        <span className={`px-3 py-0.5 text-xs font-semibold rounded-full border ${project.difficulty === 'Production System'
+                                            ? 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30'
+                                            : project.difficulty === 'Advanced'
+                                                ? 'bg-amber-500/15 text-amber-400 border-amber-500/30'
+                                                : 'bg-sky-500/15 text-sky-400 border-sky-500/30'
+                                            }`}>
+                                            {project.difficulty}
+                                        </span>
+                                    )}
+                                </div>
                                 <p className="text-muted-foreground">
                                     {project.description}
                                 </p>
@@ -102,22 +65,34 @@ techStack: [
                                         <Github className="h-5 w-5" />
                                         Code
                                     </a>
-                                    <a
-                                        href={project.demoLink}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors flex items-center gap-2 glow-hover"
-                                    >
-                                        <ExternalLink className="h-5 w-5" />
-                                        Live Demo
-                                    </a>
+                                    {project.demoLink && (
+                                        <a
+                                            href={project.demoLink}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors flex items-center gap-2 glow-hover"
+                                        >
+                                            <ExternalLink className="h-5 w-5" />
+                                            Live Demo
+                                        </a>
+                                    )}
                                 </div>
                             </div>
                         </div>
                     ))}
                 </div>
+
+                {/* View All Projects Button */}
+                <div className="flex justify-center mt-14">
+                    <a
+                        href="/projects"
+                        className="group/btn cosmic-button !px-10 !py-4 flex items-center gap-3 text-lg font-semibold"
+                    >
+                        View All Projects
+                        <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover/btn:translate-x-1" />
+                    </a>
+                </div>
             </div>
         </section>
     );
 };
-

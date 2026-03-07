@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home } from "./pages/Home";
+import { AllProjects } from "./pages/AllProjects";
 import { NotFound } from "./pages/NotFound";
 import { useTheme } from "./hooks/useTheme";
 import { StarBackground } from "./components/StarBackground";
@@ -26,8 +27,9 @@ function App() {
       <ThemeToggle />
       <BrowserRouter>
         <Routes>
-          <Route index element={<Home/>}/>
-          <Route path="*" element={<NotFound/>}/>
+          <Route index element={<Home />} />
+          <Route path="/projects" element={<AllProjects />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </main>

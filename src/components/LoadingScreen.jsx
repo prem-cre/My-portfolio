@@ -13,7 +13,7 @@ export const LoadingScreen = ({ onLoadingComplete }) => {
                 }
                 return prevProgress + 1;
             });
-        }, 30); // Adjust speed of loading here (lower number = faster)
+        }, 20); // Adjust speed of loading here (lower number = faster)
 
         return () => clearInterval(timer);
     }, [onLoadingComplete]);
@@ -47,9 +47,9 @@ export const LoadingScreen = ({ onLoadingComplete }) => {
 
                 {/* Logo container */}
                 <div className="relative w-48 h-48 rounded-full overflow-hidden bg-card border-2 border-primary/20 flex items-center justify-center">
-                    <img 
-                        src="/logo-light.png" 
-                        alt="Logo" 
+                    <img
+                        src="/logo-light.png"
+                        alt="Logo"
                         className="w-44 h-44 object-cover rounded-full scale-110 animate-pulse-subtle"
                     />
                 </div>
