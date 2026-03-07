@@ -16,7 +16,7 @@ export const ContactSection = () => {
         },
         {
             name: "LinkedIn",
-            url: "https://linkedin.com/in/geethanjali-rambarika",
+            url: "https://www.linkedin.com/in/prem-kumar-mahanty/",
             icon: <Linkedin className="h-6 w-8" />,
             text: "Prem Kumar Mahanty"
         }
