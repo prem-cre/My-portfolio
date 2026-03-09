@@ -11,7 +11,7 @@ export const AboutSection = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                     <div className="space-y-6">
-                        <h3 className="text-2xl text-primary font-semibold">Full Stack GenAI / ML Developer, Backend Engineer & Competitive Programmer </h3>
+                        <h3 className="text-2xl text-primary font-semibold">Generative AI Engineer | AI/ML & MLOps Engineer | Backend & Full-Stack Developer | Competitive Programmer </h3>
                         <p className="text-muted-foreground text-left">
                             {" "}
                             Beyond AI systems engineering, I am a dedicated competitive programmer who enjoys solving complex algorithmic problems and optimizing performance-critical workflows. I actively work across the stack—combining backend engineering, system design, and applied machine learning—to build robust, efficient, and developer-first products. I am driven by the challenge of transforming ambitious ideas into reliable, high-impact software.

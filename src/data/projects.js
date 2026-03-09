@@ -75,11 +75,11 @@ export const allProjects = [
             "LangChain",
             "ChromaDB",
             "Gemini AI",
-            "Unstructured",
-            "Streamlit",
+            "Unstructured"
+            
         ],
         githubLink: "https://github.com/prem-cre/multimodal_RAG",
-        demoLink: "",
+        demoLink: "https://multimodal-rag-eta.vercel.app/",
         category: "AI/ML",
         difficulty: "Advanced",
         featured: false,
