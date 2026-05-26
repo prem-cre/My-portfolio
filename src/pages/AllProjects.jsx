@@ -17,6 +17,7 @@ export const AllProjects = () => {
     const [searchQuery, setSearchQuery] = useState("");
     const stats = getCategoryStats();
 
+
     // Category icons mapping
     const categoryIcons = {
         All: "🚀",
@@ -96,63 +97,7 @@ export const AllProjects = () => {
                 </div>
             </header>
 
-            {/* Stats Bar */}
-            <section className="px-4 pb-8">
-                <div className="container mx-auto max-w-6xl">
-                    <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
-                        {[
-                            {
-                                label: "Total Projects",
-                                value: stats.total,
-                                icon: "🚀",
-                                gradient: "from-violet-500/20 to-purple-500/20",
-                            },
-                            {
-                                label: "AI/ML",
-                                value: stats["AI/ML"] || 0,
-                                icon: "🤖",
-                                gradient: "from-cyan-500/20 to-blue-500/20",
-                            },
-                            {
-                                label: "Backend",
-                                value: stats["Backend"] || 0,
-                                icon: "⚙️",
-                                gradient: "from-orange-500/20 to-red-500/20",
-                            },
-                            {
-                                label: "DevOps",
-                                value: stats["DevOps"] || 0,
-                                icon: "🔧",
-                                gradient: "from-green-500/20 to-emerald-500/20",
-                            },
-                            {
-                                label: "Data Science",
-                                value: stats["Data Science"] || 0,
-                                icon: "📊",
-                                gradient: "from-pink-500/20 to-rose-500/20",
-                            },
-                        ].map((stat) => (
-                            <div
-                                key={stat.label}
-                                className={`relative overflow-hidden rounded-xl border border-border bg-card/60 backdrop-blur-sm p-4 text-center transition-all duration-300 hover:scale-[1.03] hover:border-primary/40 cursor-default`}
-                            >
-                                <div
-                                    className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} opacity-50`}
-                                />
-                                <div className="relative z-10">
-                                    <span className="text-2xl">{stat.icon}</span>
-                                    <p className="text-2xl md:text-3xl font-bold text-foreground mt-1">
-                                        {stat.value}
-                                    </p>
-                                    <p className="text-xs text-muted-foreground font-medium uppercase tracking-wider mt-1">
-                                        {stat.label}
-                                    </p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+
 
             {/* Search + Filter Section */}
             <section className="px-4 pb-6 sticky top-0 z-30 bg-background/80 backdrop-blur-xl border-b border-border/50 py-4">

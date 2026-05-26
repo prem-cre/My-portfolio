@@ -12,9 +12,9 @@ const GlowyStar = ({ className = "" }) => (
 export const ExperienceSection = () => {
     const experiences = [
         {
-            title: "GEN AI Intern",
+            title: "Applied AI Engineering Intern",
             company: "LAWVRIKSH",
-            duration: "DURATION OF 6 MONTHS",
+            duration: "1yr+",
             responsibilities: [
                 "Built a full compliance-aware LLM pipeline with deterministic prompting, source-grounded generation, and multi-layer verification, reducing hallucination rates by 72% across legal drafting workflows.",
                 "Engineered an automated fact-checking engine using retrieval-augmented verification, cosine-similarity scoring, and cross-document conflict detection, improving factual accuracy by 68%.",
@@ -27,7 +27,7 @@ export const ExperienceSection = () => {
         {
             title: "Software Engineer AI Intern",
             company: "SOMTAX SOLUTIONS",
-            duration: "DURATION OF 4 MONTHS",
+            duration: "5 MONTHS",
             responsibilities: [
                                  "Designed and deployed multimodal AI agents and a citation engine using custom MCP servers & APIs, achieving seamless data integration and automation while cutting operational costs by 40%.",
                 "Orchestrated a scalable microservices architecture with Django & Docker, implementing CI/CD pipelines that reduced deployment time by 40% and improved system reliability by 25% while leading a team of 5 engineers.",

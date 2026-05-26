@@ -5,7 +5,7 @@ export const AchievementsSection = () => {
         {
             icon: <Award className="w-20 h-8 text-primary" />,
             title: "Victories",
-            description: "**Hacakthon winner of WOW GOOGLE DEVELOPERS GROUP 2025** ,**Recognized as a finalist in the Gen E-Summit Ideathon and earned a top 13 ranking in a competitive national ideathon.**"
+            description: "Hacakthon winner GOOGLE DEVELOPERS GROUP , Finalist Gen E-Summit Ideathon , Databricks Hackathon RunnerUp"
         },
         {
             icon: <StarIcon className="w-20 h-8 text-primary" />,

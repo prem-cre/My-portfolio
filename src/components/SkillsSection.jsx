@@ -10,7 +10,7 @@ export const SkillsSection = () => {
         {
             title: "Backend Development",
             icon: <Server className="h-6 w-6" />,
-            skills: ["Node.js", "Express.js","MongoDB","MySQL","NoSQL","Flask","FastAPI","Django Rest Framework","gRPC / WebSockets "]
+            skills: ["MongoDB","MySQL","NoSQL","Flask","FastAPI","Django","SpringBoot","Node.js", "Express.js","gRPC / WebSockets "]
         },
         {
             title: "DevOps & Cloud",
