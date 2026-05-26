@@ -58,7 +58,7 @@ export const allProjects = [
             "JWT Authentication ",
             "RESTful API ",
             "Python ",
-            "Next.js","WebSockets/Hooks","Docker"
+            "Next.js","WebSockets/Hooks","Docker","CI/CD"
         ],
         githubLink: "https://github.com/prem-cre/swaply-coupons-y3",
         demoLink: "https://v0-swaply-web-design-3a.vercel.app/",
