@@ -23,7 +23,7 @@ function solve(question){
  if(f.product)candidates=candidates.filter(r=>r.product.toLowerCase()===f.product.toLowerCase());
  if(f.customer)candidates=candidates.filter(r=>r.customer===f.customer);
  if(f.year!==null||f.month!==null)candidates=candidates.filter(r=>{const [y,m]=businessMonth(r.created_at);return(f.year===null||y===f.year)&&(f.month===null||m===f.month)});
- const value=r=>r.amount*(rates[f.currency]||1)/(rates[r.currency]||1);
+ const value=r=>r.amount*(rates[r.currency]||1)/(rates[f.currency]||1);
  const total=candidates.reduce((a,r)=>a+value(r),0);
  if(/\b(which|what|name|top|highest|most|best)\b/.test(s)&&/product/.test(s)){
    const g=new Map(); for(const r of candidates)g.set(r.product,(g.get(r.product)||0)+value(r));
