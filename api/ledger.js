@@ -25,15 +25,20 @@ function solve(question){
  if(f.year!==null||f.month!==null)candidates=candidates.filter(r=>{const [y,m]=businessMonth(r.created_at);return(f.year===null||y===f.year)&&(f.month===null||m===f.month)});
  const value=r=>r.amount*(rates[r.currency]||1)/(rates[f.currency]||1);
  const total=candidates.reduce((a,r)=>a+value(r),0);
+ if(/distinct|unique/.test(s)&&/customer/.test(s)) return new Set(candidates.map(r=>r.customer)).size;
+ if(/distinct|unique/.test(s)&&/product/.test(s)) return new Set(candidates.map(r=>r.product)).size;
  if(/\b(which|what|name|top|highest|most|best)\b/.test(s)&&/product/.test(s)){
-   const g=new Map(); for(const r of candidates)g.set(r.product,(g.get(r.product)||0)+value(r));
+   const metric=/units|quantity|best.?selling|most sold/.test(s)&&!/revenue|sales value|amount/.test(s)?(r=>r.qty):(r=>value(r));
+   const g=new Map(); for(const r of candidates)g.set(r.product,(g.get(r.product)||0)+metric(r));
    const best=[...g].sort((a,b)=>b[1]-a[1]); return best.length?best[0][0]:'';
  }
  if(/\b(which|what|name|top|highest|most|best)\b/.test(s)&&/customer/.test(s)){
    const g=new Map(); for(const r of candidates)g.set(r.customer,(g.get(r.customer)||0)+value(r));
    const best=[...g].sort((a,b)=>b[1]-a[1]); return best.length?best[0][0]:'';
  }
- if(/how many|number of|count of|count\b|how much|quantity|units? sold/.test(s)&&/orders?/.test(s)) return candidates.length;
+ if(/how many|number of|count of|count\b/.test(s)&&/customer/.test(s)) return new Set(candidates.map(r=>r.customer)).size;
+ if(/how many|number of|count of|count\b/.test(s)&&/(orders?|transactions?|refunds?)/.test(s)) return candidates.length;
+ if(/how many|number of|count of|count\b|units? sold|quantity/.test(s)&&/units?|items?|products?/.test(s)) return candidates.reduce((a,r)=>a+r.qty,0);
  if(/average|avg\b/.test(s)) return candidates.length?Number((total/candidates.length).toFixed(2)):0;
  return Number(total.toFixed(2));
 }
